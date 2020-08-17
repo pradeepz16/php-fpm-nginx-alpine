@@ -19,7 +19,7 @@ php7-zip \
 libxml2
 
 RUN apk --no-cache add nginx supervisor openssh-client git nano
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+COPY /config/php.ini "$PHP_INI_DIR/php.ini"
 
 RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
 COPY /config/nginx.conf /etc/nginx/nginx.conf
