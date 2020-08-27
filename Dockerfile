@@ -15,6 +15,7 @@ gd \
 intl \
 pdo_mysql \
 soap \
+sockets \
 xsl \
 zip
 
