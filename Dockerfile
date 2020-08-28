@@ -40,5 +40,7 @@ RUN adduser -D -g 'magento' magento
 RUN chown -R magento:magento /var/lib/nginx
 RUN chown -R magento:magento /var/www/html
 
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 EXPOSE 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
